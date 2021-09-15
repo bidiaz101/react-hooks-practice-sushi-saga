@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MoreButton from "./MoreButton";
 import Sushi from "./Sushi"
 
-function SushiContainer({plates, setPlates,money ,setMoney}) {
+function SushiContainer({plates, setPlates, money ,setMoney}) {
   const [sushiData, setSushiData] = useState([])
   const [displayIndices, setDisplayIndices] = useState([0,4])
 
