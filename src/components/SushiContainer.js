@@ -5,6 +5,7 @@ import Sushi from "./Sushi"
 function SushiContainer({plates, setPlates, money ,setMoney}) {
   const [sushiData, setSushiData] = useState([])
   const [displayIndices, setDisplayIndices] = useState([0,4])
+  const [eatenSushi, setEatenSushi] = useState([])
 
   useEffect(()=>{
     fetch("http://localhost:3001/sushis")
@@ -22,6 +23,9 @@ function SushiContainer({plates, setPlates, money ,setMoney}) {
       plates={plates}
       money={money}
       setMoney={setMoney}
+      eatenSushi={eatenSushi}
+      setEatenSushi={setEatenSushi}
+      id={sushi.id}
     />
   })
 

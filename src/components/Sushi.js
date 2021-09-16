@@ -1,13 +1,27 @@
 import React, {useState} from "react";
 
-function Sushi({ image, name, price, plates, setPlates, money, setMoney }) {
-  const [beenEaten, setBeenEaten] = useState(false)
+function Sushi({ 
+  image, 
+  name, 
+  price, 
+  plates, 
+  setPlates, 
+  money, 
+  setMoney,
+  eatenSushi,
+  setEatenSushi,
+  id
+}) {
+  const eatenArray = eatenSushi.filter(sushiId => sushiId === id)
+
+  const [beenEaten, setBeenEaten] = useState(eatenArray[0] === id ? true : false)
 
   function handleEaten() {
     if(money>=price) {
       setBeenEaten(true)
       setMoney(money-price)
       setPlates([...plates, "plate"])
+      setEatenSushi([...eatenSushi, id])
     }
   }
 

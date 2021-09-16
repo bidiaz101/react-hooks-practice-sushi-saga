@@ -2,7 +2,6 @@ import React from "react";
 
 function MoreButton({displayIndices, setDisplayIndices}) {
   function handleClick(){
-    console.log(displayIndices)
     if(displayIndices[1]>=100) {
       setDisplayIndices([0, 4])
     }else{
